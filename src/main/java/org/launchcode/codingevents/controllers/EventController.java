@@ -14,7 +14,7 @@ import java.util.List;
  * Created by Chris Bay
  */
 @Controller
-@RequestMapping("events/")
+@RequestMapping("events")
 public class EventController {
 
     private static List<String> events = new ArrayList<>();
@@ -33,7 +33,7 @@ public class EventController {
     @PostMapping("create")
     public String createEvent(@RequestParam String eventName) {
         events.add(eventName);
-        return "redirect:";
+        return "redirect:/events";
     }
 
 }
