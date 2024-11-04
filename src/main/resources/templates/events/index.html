@@ -5,11 +5,28 @@
 
 <header th:replace="fragments :: header"></header>
 
-<ul>
-    <th:block th:each="event : ${events}">
-        <li th:text="${event}"></li>
-    </th:block>
-</ul>
+<table>
+    <thead>
+        <tr>
+            <th>Name</th>
+            <th>Description</th>
+            <th>Location</th>
+            <th>Picture</th>
+        </tr>
+    </thead>
+    <tbody>
+        <th:block th:each="event : ${events}">
+            <tr>
+                <td th:text="${event.getEventName()}">Table Row one</td>
+                <td th:text="${event.getDescription()}">Table Row two</td>
+                <td th:text="${event.getLocation()}">Table Row Three</td>
+                <td>
+                    <img th:src="${event.getPictureURL()}" width="100" height="100"/>
+                </td>
+            </tr>
+        </th:block>
+    </tbody>
+</table>
 
 </body>
 </html>

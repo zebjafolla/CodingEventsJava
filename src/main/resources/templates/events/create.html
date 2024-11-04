@@ -1,12 +1,15 @@
 <!DOCTYPE html>
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
-<head th:replace="events/fragments :: head"></head>
+<head th:replace="fragments :: head"></head>
 <body>
 
 <header th:replace="fragments :: header"></header>
 
 <form method="post">
-    <input type="text" name="eventName">
+    <input type="text" placeholder="Event Name" name="eventName"/>
+    <input type="text" placeholder="Description" name="description"/>
+    <input type="text" placeholder="Location" name="location"/>
+    <input type="text" placeholder="Picture URL" name="pictureURL"/>
     <input type="submit" value="Create">
 </form>
 
